@@ -21,6 +21,6 @@ from checkin import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', views.index, name='home'),
+    path('', views.home, name='home'),
     path('pages/signup',views.signup,name='signup-page'),
 ]
