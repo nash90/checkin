@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.content-image {
+object-fit: cover;
+width: 900px;
+height: 400px;
+}
+
+.thum-image {
+object-fit: cover;
+height: 300px;
+}
+
+.card-body-cus{
+height:350px
+}
+
+@media only screen and (max-width: 576px){
+.card-body-cus{
+  height:auto
+}
+}
