@@ -24,3 +24,7 @@ height:350px
   height:auto
 }
 }
+
+#room-login-table .errorlist {
+  color:red
+}
