@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+  {% if user.is_authenticated%}
+    {% include "logged-nav.html" %}
+  {% else %}
+    {% include "general-nav.html" %}
+  {%endif%}
+{% endblock %}
+
+{% block content %}
+<form action="/room/logout" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Logout Room">
+</form>
+
+<form enctype="multipart/form-data" action="/room/customer" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

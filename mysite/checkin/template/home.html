@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-<form action="/your-name/" method="post">
+<form action="/room/login" method="post">
     {% csrf_token %}
-    <table>
+    <table id="room-login-table">
     {{ form.as_table }}
     </table>
     <input type="submit" value="Submit">
