@@ -11,7 +11,7 @@
 {% block content %}
 <form action="/room/logout" method="post">
     {% csrf_token %}
-    <input type="submit" value="Logout Room">
+    <input type="submit" value="Reset Room">
 </form>
 
 <form enctype="multipart/form-data" action="/room/customer" method="post">

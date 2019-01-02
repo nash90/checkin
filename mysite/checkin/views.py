@@ -191,13 +191,10 @@ def send_email(param):
 
 
 def send_client_email(form, room_snum, files):
-    #print(form)
     data = form.cleaned_data
     data["room_snum"] = room_snum
     user = RoomService().getUserByRoomSnum(room_snum)
-    print(dir(user))
     user_email = user.email
-    print(user_email)
     subject = room_snum + ": Customer Information"
     body = generateBody(checkin_mail_template, data)
     from_address = "support@yamacity.com"
