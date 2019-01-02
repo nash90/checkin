@@ -5,14 +5,14 @@ from django import forms
 # Create your models here.
 class Room(models.Model):
     id = models.AutoField(primary_key=True)
-    room_id = models.CharField(max_length=50)
+    room_snum = models.CharField(max_length=50)
     room_name = models.CharField(max_length=50)
     room_pin = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.name
+        return self.room_name
 
 class Customer(models.Model):
     id = models.AutoField(primary_key=True)
@@ -29,11 +29,11 @@ class Customer(models.Model):
     cust_checkout_date = models.DateTimeField('checkout')
 
     def __str__(self):
-        return self.name
+        return self.cust_firstname
 
 # Form models
 class RoomLoginForm(forms.Form):
-    room_id = forms.CharField(label='Room Id', max_length=50)
+    room_snum = forms.CharField(label='Room Serial Number', max_length=50)
     room_pin = forms.CharField(label='Pin Code', max_length=50)
 
 class CheckinForm(forms.Form):
@@ -47,3 +47,4 @@ class CheckinForm(forms.Form):
     cust_passport_number = forms.CharField(label='Passport Number', max_length=100)
     cust_checkin_date = forms.DateTimeField(label='Checkin Date')
     cust_checkout_date = forms.DateTimeField(label='Checkout Date')
+    cust_id_image = forms.ImageField(label='Picture of Id')

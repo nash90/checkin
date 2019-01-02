@@ -8,6 +8,9 @@ verify_ssl = true
 [packages]
 django = "*"
 jwt = "*"
+python-dateutil = "*"
+pyjwt = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"

@@ -26,7 +26,7 @@ SECRET_KEY = '302x0^f#spq+gwbf4$w23tx2!=a7s1*ll8k7oyo6in8fi0-g04'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["172.28.68.212","localhost"]
 
 
 # Application definition
@@ -131,7 +131,10 @@ LOGIN_URL = reverse_lazy('login')
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
 SIGNUP_REDIRECT_URL = reverse_lazy('home')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, "news/static/")
 MEDIA_URL = "/media/"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND
+EMAIL_HOST="127.0.0.1"
+EMAIL_PORT=25
